@@ -1,0 +1,19 @@
+{
+  "name": "reddit_search_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dbirtic/Reddit_search_app.git"
+  },
+  "author": "Dbirtic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dbirtic/Reddit_search_app/issues"
+  },
+  "homepage": "https://github.com/Dbirtic/Reddit_search_app#readme"
+}
