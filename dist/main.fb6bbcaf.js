@@ -118,7 +118,48 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-// Write your code here...
+var searchForm = document.getElementById("search-form");
+var searchInput = document.getElementById("search-input"); // Form event listener
+
+searchForm.addEventListener("submit", function (e) {
+  // Get search term
+  var searchTerm = searchInput.value; // Get sort
+
+  var sortBy = document.querySelector("input[name='sortby']:checked").value;
+  console.log(sortBy); // Get limit
+
+  var searchLimit = document.getElementById("limit").value;
+  console.log(searchLimit); // Check input
+
+  if (searchTerm === '') {
+    // Show message
+    showMessage('Please add a search term', 'alert-danger');
+  } // Clear Input
+
+
+  searchInput.value = ''; // Search Reddit
+
+  e.preventDefault();
+}); // Show message function
+
+function showMessage(message, className) {
+  // create div
+  var div = document.createElement('div'); // Add classes
+
+  div.className = "alert ".concat(className); // Add text
+
+  div.appendChild(document.createTextNode(message)); // Get parent
+
+  var searchContainer = document.getElementById('search-container'); // Get search
+
+  var search = document.getElementById('search'); // Insert Message
+
+  searchContainer.insertBefore(div, search); // Timeout alert
+
+  setTimeout(function () {
+    return document.querySelector('.alert').remove();
+  }, 3000);
+}
 },{}],"C:/Users/Dominik/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -147,7 +188,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54381" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54622" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
